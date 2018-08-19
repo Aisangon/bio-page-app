@@ -1,0 +1,7 @@
+<li *ngFor="let change of portfolio.changeLog" [style.color]="change.color"
+            (mouseenter)="change.showDetails = true;" (mouseleave)="change.showDetails = false;"
+            >
+                <div [innerText]="change.month + ' - ' + change.year"></div>
+                <div [innerText]="change.highlight"></div>
+                <div *ngIf="change.showDetails" class="changeLogDetails" [innerText]="change.details"></div>
+</li>

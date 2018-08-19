@@ -1,0 +1,68 @@
+<div class="container">
+    <span class="text-center">
+        <h1 [innerText]="portfolio.firstName + ' ' + portfolio.lastName"></h1>
+        <h2 class="subHeading" [innerText]="portfolio.subheading"></h2>
+        <img src= "../assets/img/about1.jpg" class="rounded-circle mx-auto d-block smallerImg">
+    </span>
+    
+<div class="row justify-content-center">
+    <a [href]="social.link" class="p-2" target="blank" *ngFor="let social of portfolio.socialMedia">
+        <i [style.color]="social.color" [class]="social.icon"></i></a>
+</div>
+    
+<div>
+    <h3>
+        <i (click)="toggleOpen('logOpen')" *ngIf="logOpen; else logExpanded" class="fa fa-plus"></i>
+        <ng-template #logExpanded>
+        <i class="fa fa-minus" (click)="toggleOpen('logOpen')" ></i>
+        </ng-template>
+        Changelog
+    </h3>
+    <p class="description">I've been studying and working hard as a developer. Here are some of the highlights!</p>
+    <div *ngIf="!logOpen" [@fadeInOut]>
+        <ul>
+            <!-- <portfolio-changelog *ngFor="let change of portfolio.changeLog" [changelog]="change"></portfolio-changelog> -->
+            <li *ngFor="let change of portfolio.changeLog" [style.color]="change.color"
+            (mouseenter)="change.showDetails= true;" (mouseleave)="change.showDetails= false;"
+            >
+                <div [innerText]="change.month + ' - ' + change.year"></div>
+                <div [innerText]="change.highlight"></div>
+                <div *ngIf="change.showDetails" class="changeLogDetails" [innerText]="change.details"></div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div>
+    <h3>
+        <i class="fa fa-plus" *ngIf="updateOpen; else updateExpanded" (click)="toggleOpen('updateOpen')"></i>
+        <ng-template #updateExpanded>
+        <i class="fa fa-minus" (click)="toggleOpen('updateOpen')"></i>
+        </ng-template>
+        Updates/Releases
+    </h3>
+    <p class="description">Some news and collaborations I've been a part of.</p>
+    <div *ngIf="!updateOpen" [@fadeInOut]>
+        <ul>
+            <portfolio-update *ngFor="let update of portfolio.updates" [update]="update"></portfolio-update>
+            <!-- <li class="liUpdates pt-3" ">
+                <a [href]="update.link" class="updates" target="blank" [innerText]="update.description"></a>
+            </li> -->
+        </ul>
+    </div>
+</div>
+
+<div>
+    <h3>
+        <i class="fa fa-plus" (click)="toggleOpen('bioOpen')" *ngIf="bioOpen; else bioExpanded"></i>
+        <ng-template #bioExpanded>
+        <i class="fa fa-minus" (click)="toggleOpen('bioOpen')"></i>
+        </ng-template>
+        Bio
+    </h3>
+    <p class="description">Just a little bit more info about me and the work I've been up to.</p>
+    <div *ngIf="!bioOpen" class="speakerBio p-5 mb-5" [innerText]="portfolio.speakerBio" [@fadeInOut]>
+    </div>
+</div>
+
+</div>
