@@ -20,17 +20,37 @@ export const PortfolioData: Portfolio = {
     changeLog: [
       {
         color: '#10A2F5',
+        month: 'February',
+        year: 2018,
+        highlight: 'I started my first course in Web Developement',
+        details: 'My passion for tech was born!',
+      },
+      {
+        color: '#10A2F5',
         month: 'July',
         year: 2018,
         highlight: '6 months since I started coding',
         details: 'It\'s been one of the best decisions in my life',
       },
+      {
+        color: '#10A2F5',
+        month: 'August',
+        year: 2018,
+        highlight: 'I received my first Job offer as a Junior Developer',
+        details: 'I was so happy! All the intense work has paid off!',
+      },
+
     ],
     updates: [
       {
         description: 'I build my portfolio site: yourdevelover.com',
         link: 'https://yourdevelover.com'
       },
+      {
+        description: 'I participated in a fun workshop about Vue.Js',
+        link: ''
+      },
     ],
-    speakerBio: 'Pig capicola buffalo kevin, chuck ham hock t-bone kielbasa biltong chicken bresaola.'
+    // tslint:disable-next-line:max-line-length
+    speakerBio: 'Hi! My name is Ainel, I\'m a software developer currently living in Berlin, Germany. My passion is to be a creator of the positive impact that technology can provide to our everyday lifes'
 };
