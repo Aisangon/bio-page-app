@@ -20,32 +20,29 @@ import { Portfolio, PortfolioData } from '../models';
 })
 
 export class AppComponent implements OnInit {
-public portfolio: Portfolio;
-// tslint:disable-next-line:no-inferrable-types
-public logOpen: boolean = true;
-// tslint:disable-next-line:no-inferrable-types
-public updateOpen: boolean = true;
-// tslint:disable-next-line:no-inferrable-types
-public bioOpen: boolean = true;
+    public portfolio: Portfolio;
+    public logOpen: boolean = true;
+    public updateOpen: boolean = true;
+    public bioOpen: boolean = true;
 
-public ngOnInit(): void {
-    this.portfolio = PortfolioData;
+    public ngOnInit(): void {
+        this.portfolio = PortfolioData;
     }
 
-public toggleOpen(valueToToggle: string): void {
-  switch (valueToToggle) {
-    case 'logOpen':
-    this.logOpen = !this.logOpen;
-    break;
-    case 'updateOpen':
-    this.updateOpen = !this.updateOpen;
-    break;
-    case 'updateOpen':
-    this.updateOpen = !this.updateOpen;
-    break;
-    case 'bioOpen':
-    this.bioOpen = !this.bioOpen;
-    break;
-  }
-}
+    public toggleOpen(valueToToggle: string): void {
+        switch (valueToToggle) {
+            case 'logOpen':
+                this.logOpen = !this.logOpen;
+            break;
+            case 'updateOpen':
+                this.updateOpen = !this.updateOpen;
+            break;
+            case 'updateOpen':
+                this.updateOpen = !this.updateOpen;
+            break;
+            case 'bioOpen':
+                this.bioOpen = !this.bioOpen;
+            break;
+        }
+    }
 }
